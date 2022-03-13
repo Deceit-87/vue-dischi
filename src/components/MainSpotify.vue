@@ -1,11 +1,11 @@
 <template>
-  <div class="album-list">
-    <ul>
+  <div class="album-container">
+    <ul class="album-list">
 
          <Album 
          v-for="(album,index) in albums"
           :key="index"
-          :album="album"/>
+          :patate="album"/>
 
     </ul>
 
@@ -52,11 +52,18 @@ export default {
 
 <style>
 
-.album-list{
-    width: 1155px;
+.album-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 1195px;
     margin: 0 auto;
     height: 750px;
-    border: 2px solid black;
     margin-top: 80px;
+    
+}
+.album-list{
+        display: contents;
+
 }
 </style>

@@ -39,6 +39,11 @@ body{
   max-width: 1970px;
   height: 100vh;
 }
+ul,ol{
+  list-style: none;
+}
 
-
+ * img{
+  max-width: 100%;
+}
 </style>
