@@ -10,14 +10,16 @@
     </ul>
 
     <div class="select-album">
+      <button @click="genreArray()">PROVA FUNZIONE</button>
 
       <select 
       v-model="sctAlbums" 
       name="genre">
+        <option value="All">All</option>
         <option 
-        v-for="(album,genre) in albums"
+        v-for="(album,genre) in genreArray()"
         :key="genre"
-        :value="album.genre">{{album.genre}}
+        :value="album">{{album}}
         </option>
        
       </select>
@@ -75,7 +77,14 @@ export default {
                return albumFiltred;
          },
               genreArray:function(){
-                console.log(this.albums.genre)
+                let selectOpt = [];
+                
+                for (let j = 0; j < this.albums.length; j++) {
+                    if(selectOpt.includes(this.albums[j].genre) == false){
+                         selectOpt.push(this.albums[j].genre);
+                    }  
+                }
+                return selectOpt
               },
            
         //  genreArray:function(){
