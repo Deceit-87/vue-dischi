@@ -1,6 +1,8 @@
 <template>
-  <Header>
-  <Main/>
+  <div id="app">
+    <Header/>
+    <Main/>
+  </div>
 </template>
 
 <script>
@@ -19,13 +21,24 @@ export default {
 </script>
 
 <style lang="scss">
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 #app {
-  max-width: 1970px;
+  
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+body{
+  background-color: #1e2d3b;
+  max-width: 1970px;
+  height: 100vh;
+}
+
+
 </style>
