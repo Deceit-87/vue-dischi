@@ -10,11 +10,10 @@
     </ul>
 
     <div class="select-album">
-      <button @click="genreArray()">PROVA FUNZIONE</button>
-
       <select 
       v-model="sctAlbums" 
-      name="genre">
+      name="genre" open>
+        <option value="" disabled selected hidden>Choose Genre</option>
         <option value="All">All</option>
         <option 
         v-for="(album,genre) in genreArray()"
@@ -62,12 +61,12 @@ export default {
         setFilter:function(){
                let albumFiltred = [];
                for (let i = 0; i < this.albums.length; i++) {
-                    if (( this.sctAlbums != "") && ( this.sctAlbums != "All")) {
-                        if ( this.albums[i].genre == this.sctAlbums ) {
-                          albumFiltred.push( this.albums[i] );
-                        }
-                        else {
-                          this.album = albumFiltred;
+                 if (( this.sctAlbums != "") && ( this.sctAlbums != "All")) {
+                    if ( this.albums[i].genre == this.sctAlbums ) {
+                         albumFiltred.push( this.albums[i] );
+                     }
+                    else {
+                        this.album = albumFiltred;
                           }
                         } 
                     else {
@@ -76,16 +75,16 @@ export default {
                }
                return albumFiltred;
          },
-              genreArray:function(){
-                let selectOpt = [];
-                
-                for (let j = 0; j < this.albums.length; j++) {
-                    if(selectOpt.includes(this.albums[j].genre) == false){
-                         selectOpt.push(this.albums[j].genre);
-                    }  
-                }
-                return selectOpt
-              },
+        genreArray:function(){
+          let selectOpt = [];
+          
+          for (let j = 0; j < this.albums.length; j++) {
+              if(selectOpt.includes(this.albums[j].genre) == false){
+                   selectOpt.push(this.albums[j].genre);
+              }  
+          }
+          return selectOpt;
+        },
            
         //  genreArray:function(){
         //    let selectOpt = [];
@@ -123,6 +122,17 @@ export default {
     top: 2%;
     left: 50%;
     transform: translatex(-50%);
+    select{
+      background:#1ed760;
+      border: none;
+      padding: 5px 9px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #35424f;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+    
+    }
 }
 
 .album-container{
