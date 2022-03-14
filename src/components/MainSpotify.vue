@@ -61,20 +61,33 @@ export default {
         setFilter:function(){
                let albumFiltred = [];
                for (let i = 0; i < this.albums.length; i++) {
-                 if (( this.sctAlbums != "") && ( this.sctAlbums != "All")) {
-                    if ( this.albums[i].genre == this.sctAlbums ) {
+                 if (( this.sctAlbums != "") && ( this.albums[i].genre == this.sctAlbums ) ){
+                   
                          albumFiltred.push( this.albums[i] );
                      }
-                    else {
-                        this.album = albumFiltred;
-                          }
-                        } 
-                    else {
-                       albumFiltred.push( this.albums[i] );
-                    }
-               }
+                  else if( ( this.sctAlbums == "")||( this.sctAlbums == 'All' ) ){
+                      albumFiltred = this.albums
+                  }
+                }
                return albumFiltred;
          },
+        // setFilter:function(){
+        //        let albumFiltred = [];
+        //        for (let i = 0; i < this.albums.length; i++) {
+        //          if (( this.sctAlbums != "") && ( this.sctAlbums != "All")) {
+        //             if ( this.albums[i].genre == this.sctAlbums ) {
+        //                  albumFiltred.push( this.albums[i] );
+        //              }
+        //             else {
+        //                 this.album = albumFiltred;
+        //              }
+        //           } 
+        //          else {
+        //                albumFiltred.push( this.albums[i] );
+        //           }
+        //         }
+        //        return albumFiltred;
+        //  },
         genreArray:function(){
           let selectOpt = [];
           
