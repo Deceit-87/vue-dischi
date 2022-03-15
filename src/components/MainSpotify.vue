@@ -2,10 +2,10 @@
   <div class="album-container">
     <ul class="album-list">
 
-         <Album 
-         v-for="(album,index) in setFilter()"
-          :key="index"
-          :patate="album"/>
+       <Album 
+       v-for="(album,index) in setFilter()"
+        :key="index"
+        :patate="album"/>
 
     </ul>
 
@@ -66,7 +66,7 @@ export default {
                          albumFiltred.push( this.albums[i] );
                      }
                   else if( ( this.sctAlbums == "")||( this.sctAlbums == 'All' ) ){
-                      albumFiltred = this.albums
+                         albumFiltred = this.albums;
                   }
                 }
                return albumFiltred;
