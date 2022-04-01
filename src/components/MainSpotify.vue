@@ -44,6 +44,7 @@ export default {
 
       }
    },
+
    methods: {
        fetchAlbums:function(){
            axios.get('https://flynn.boolean.careers/exercises/api/array/music')
@@ -56,6 +57,10 @@ export default {
                this.albums = [];
            })
          
+        
+
+
+
           
         },
         setFilter:function(){
@@ -71,23 +76,7 @@ export default {
                 }
                return albumFiltred;
          },
-        // setFilter:function(){
-        //        let albumFiltred = [];
-        //        for (let i = 0; i < this.albums.length; i++) {
-        //          if (( this.sctAlbums != "") && ( this.sctAlbums != "All")) {
-        //             if ( this.albums[i].genre == this.sctAlbums ) {
-        //                  albumFiltred.push( this.albums[i] );
-        //              }
-        //             else {
-        //                 this.album = albumFiltred;
-        //              }
-        //           } 
-        //          else {
-        //                albumFiltred.push( this.albums[i] );
-        //           }
-        //         }
-        //        return albumFiltred;
-        //  },
+    
         genreArray:function(){
           let selectOpt = [];
           
@@ -98,26 +87,6 @@ export default {
           }
           return selectOpt;
         },
-           
-        //  genreArray:function(){
-        //    let selectOpt = [];
-        //     let genre = this.albums.genre;
-           
-
-        //    for (let i = 0; i < this.albums.length; i++) {
-        //      if(selectOpt.includes(genre[i]) === false){
-        //        selectOpt.push(genre[i]);
-        //       console.log( selectOpt)
-        //      }
-        //      else{
-        //        return selectOpt;
-
-        //      }
-        //                    console.log( selectOpt)
-
-        //    }
-           
-        //  },
 
     },
 
@@ -163,3 +132,5 @@ export default {
 
 }
 </style>
+
+
